@@ -1,16 +1,16 @@
 ---
 version: "2.1"
 services:
-  teemip:
+  teemip-demo:
     image: lscr.io/linuxserver/nginx:latest
-    container_name: teemip
+    container_name: teemip-demo
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
       - DOCKER_MODS=linuxserver/mods:letsencrypt-imagemagick|linuxserver/mods:universal-cron
     volumes:
-      - ${LOCVOL1}teemip:/config
+      - ${LOCVOL1}teemip-demo:/config
     #ports:
     #  - 80:80
     #  - 443:443
@@ -18,9 +18,9 @@ services:
     #depends_on:
     #- teemip-db
 #
-  teemip-db:
+  teemip-demo-db:
     image: lscr.io/linuxserver/mariadb:latest
-    container_name: teemip-db
+    container_name: teemip-demo-db
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
@@ -31,7 +31,7 @@ services:
       #- MYSQL_USER=MYSQL_USER #optional
       #- MYSQL_PASSWORD=DATABASE_PASSWORD #optional
     volumes:
-      - ${LOCVOL1}teemip-db:/config
+      - ${LOCVOL1}teemip-demo-db:/config
     #ports:
     #  - 3306:3306
     restart: unless-stopped    
