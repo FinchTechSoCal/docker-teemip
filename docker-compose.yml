@@ -26,7 +26,7 @@ services:
       - PGID=${PGID}
       - TZ=${TZ}
       - DOCKER_MODS=linuxserver/mods:universal-cron
-      #- MYSQL_ROOT_PASSWORD=ROOT_ACCESS_PASSWORD
+      - MYSQL_ROOT_PASSWORD=${mysqlsa}
       #- MYSQL_DATABASE=USER_DB_NAME #optional
       #- MYSQL_USER=MYSQL_USER #optional
       #- MYSQL_PASSWORD=DATABASE_PASSWORD #optional
